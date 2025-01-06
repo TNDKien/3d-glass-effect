@@ -1,8 +1,4 @@
-import dynamic from "next/dynamic";
-
-const JinxScene = dynamic(() => import("../components/JinxModel/JinxModel"), {
-  ssr: false,
-});
+import JinxScene from "@/components/JinxModel/JinxModel";
 
 export default function Home() {
   return (

@@ -2,7 +2,12 @@
 
 import { useState, useRef, useEffect } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { useGLTF, OrbitControls, PerspectiveCamera } from "@react-three/drei";
+import {
+  useGLTF,
+  OrbitControls,
+  PerspectiveCamera,
+  Environment,
+} from "@react-three/drei";
 import * as THREE from "three";
 
 function JinxModel() {
@@ -20,6 +25,9 @@ function JinxModel() {
             clearcoat: 1.0,
             clearcoatRoughness: 0.1,
           });
+          child.material.transparent = true;
+          child.material.opacity = 0.6;
+          child.material.envMapIntensity = 2;
         }
       });
     }
@@ -32,7 +40,7 @@ function JinxModel() {
   });
 
   return (
-    <group ref={modelRef} scale={viewport.height * 0.008}>
+    <group ref={modelRef} scale={viewport.width / 50} position={[0, -10, 0]}>
       <primitive object={scene} />
     </group>
   );
@@ -40,13 +48,39 @@ function JinxModel() {
 
 export default function JinxScene() {
   return (
-    <div style={{ width: "100vw", height: "100vh" }}>
+    <div className="w-screen h-screen">
       <Canvas>
-        <PerspectiveCamera makeDefault position={[0, 0, 5]} />
+        <PerspectiveCamera makeDefault position={[0, 0, 50]} />
         <OrbitControls enablePan={false} />
-        <ambientLight intensity={0.5} />
-        <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-        <pointLight position={[-10, -10, -10]} />
+
+        <ambientLight intensity={0.5} color="#ffffff" />
+
+        <spotLight
+          position={[30, 50, 30]}
+          intensity={1.2}
+          angle={0.4}
+          penumbra={0.5}
+          castShadow
+          color="#ffffff"
+        />
+
+        <pointLight
+          position={[-20, 10, -10]}
+          intensity={1}
+          decay={2}
+          distance={100}
+          color="#c1eaff"
+        />
+
+        <pointLight
+          position={[10, -10, 20]}
+          intensity={0.7}
+          decay={1.5}
+          distance={80}
+          color="#ffdee3"
+        />
+        <Environment preset="sunset" background />
+
         <JinxModel />
       </Canvas>
     </div>
