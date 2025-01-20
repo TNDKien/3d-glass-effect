@@ -1,5 +1,7 @@
 # Media Design Semester 3 Expo
 
+https://3d-prism-effect-bice.vercel.app/
+
 An interactive 3D showcase built with React Three Fiber, featuring floating text elements and prismatic-like 3D models.
 
 ## 🚀 Features
