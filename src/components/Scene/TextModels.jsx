@@ -9,7 +9,7 @@ export default function TextModel() {
 
   const texts = [
     { text: "Media Design", style: "black-bg" },
-    { text: "Semester 3", style: "border-bg" },
+    { text: "Semester 2&3", style: "border-bg" },
     { text: "Expo", style: "black-bg" },
   ];
 
