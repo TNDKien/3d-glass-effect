@@ -9,8 +9,7 @@ An interactive 3D showcase built with React Three Fiber, featuring floating text
 - Interactive 3D environment
 - Prismatic effect models
 - Floating text animations
-- Responsive design that scales with viewport
-- Custom pink environment mapping
+- Custom pink environment
 
 ## 🛠️ Technologies
 
