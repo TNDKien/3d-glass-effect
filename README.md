@@ -46,7 +46,7 @@ Feel free to add or change models to the project.
 1. Clone the repository:
 
 ```bash
-https://github.com/TNDKien/3d-prism-effect.git
+git clone https://github.com/TNDKien/3d-prism-effect.git
 ```
 
 2. Install dependencies:
