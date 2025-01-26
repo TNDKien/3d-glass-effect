@@ -8,9 +8,9 @@ export default function TextModel() {
   const { viewport } = useThree();
 
   const texts = [
+    { text: "ICT", style: "black-bg" },
+    { text: "&", style: "border-bg" },
     { text: "Media Design", style: "black-bg" },
-    { text: "Semester 2&3", style: "border-bg" },
-    { text: "Expo", style: "black-bg" },
   ];
 
   return (
